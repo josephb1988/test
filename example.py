@@ -555,7 +555,7 @@ def fullmap():
         imgnum = str(pokemon[0]);
         if len(imgnum) <= 2: imgnum = '0' + imgnum
         if len(imgnum) <= 2: imgnum = '0' + imgnum
-        if time.time() > dissapear_timestamp: continue
+        #if time.time() > dissapear_timestamp: continue
         pokeMarkers.append(
             {
                 'icon': 'static/icons/'+str(pokemon[0])+'.png',
