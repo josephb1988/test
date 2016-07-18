@@ -491,8 +491,7 @@ def main():
             if args.china:
                 poke.Latitude, poke.Longitude = transform_from_wgs_to_gcj(Location(poke.Latitude, poke.Longitude))
                 
-            if ( datetime.datetime.now().time() < disappear_timestamp ):    
-                pokemons.append([poke.pokemon.PokemonId, label, poke.Latitude, poke.Longitude])
+            pokemons.append([poke.pokemon.PokemonId, label, poke.Latitude, poke.Longitude])
 
         #Scan location math
         if (-steplimit/2 < x <= steplimit/2) and (-steplimit/2 < y <= steplimit/2):
@@ -554,6 +553,7 @@ def fullmap():
         imgnum = str(pokemon[0]);
         if len(imgnum) <= 2: imgnum = '0' + imgnum
         if len(imgnum) <= 2: imgnum = '0' + imgnum
+        if poke.TimeTillHiddenMs < 0: continue
         pokeMarkers.append(
             {
                 'icon': 'static/icons/'+str(pokemon[0])+'.png',
