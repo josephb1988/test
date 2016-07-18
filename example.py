@@ -550,7 +550,7 @@ def fullmap():
     pokeMarkers = []
     for pokemon in pokemons:
         currLat, currLon = pokemon[-2], pokemon[-1]
-        dissapear_timestamp = pokemon[-3]
+        dissapear_timestamp = pokemon[4]
         
         imgnum = str(pokemon[0]);
         if len(imgnum) <= 2: imgnum = '0' + imgnum
