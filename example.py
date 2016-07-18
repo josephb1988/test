@@ -490,7 +490,8 @@ def main():
                     )
             if args.china:
                 poke.Latitude, poke.Longitude = transform_from_wgs_to_gcj(Location(poke.Latitude, poke.Longitude))
-            if (poke.TimeTillHiddenMs>0):
+                
+            if ( time.time() < disappear_timestamp ):    
                 pokemons.append([poke.pokemon.PokemonId, label, poke.Latitude, poke.Longitude])
 
         #Scan location math
