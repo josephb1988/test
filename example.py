@@ -529,7 +529,7 @@ def register_background_thread(initial_registration=False):
 
     else:
         debug("register_background_thread: queueing")
-        search_thread = threading.Timer(30, main)  # delay, in seconds
+        search_thread = threading.Timer(60, main)  # delay, in seconds
 
     search_thread.daemon = True
     search_thread.name = "search_thread"
